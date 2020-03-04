@@ -1,0 +1,28 @@
+﻿@model IEnumerable<TravelTester.Areas.Admin.Models.Place>
+<section class="latest-news sec-padding-top even">
+    <div class="zt-container">
+        <div class="sec-title text-center sec-title-padding">
+            <h2>Places</h2>
+            <span class="tagline">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos</span>
+            <span class="img-border"></span>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="single-latest-news">
+                        <div class="img-box">
+                            <img src="@Html.DisplayFor(model => item.Images)" alt="" />
+                        </div>
+                        <div class="text-box position-relative">
+                            <span class="angle-up"></span>
+                            <h3>@Html.DisplayFor(model => item.Title)</h3>
+                            <p>@Html.DisplayFor(model => item.Description).ToString().Substring(0, 20)...</p>
+                            <a href="@Url.Action("Details", "Places", new { id=item.Id })" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

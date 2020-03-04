@@ -1,0 +1,24 @@
+﻿
+@model TravelTester.Areas.Admin.Models.Review
+<div class="blog-post-comment">
+    <div class="title-box"><h3>Comments</h3></div>
+    @using (Html.BeginForm("AddReviewTour", "Tours", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <input class="zt-control" name="Name" type="text" placeholder="Name *" />
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <input class="zt-control" name="Email" type="text" placeholder="Email *" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <textarea class="zt-control" name="Content" placeholder="Comment..." rows="10"></textarea>
+        </div>
+        <button type="submit" class="btn zt-primary btn-lg">Comment</button>
+    }
+</div>

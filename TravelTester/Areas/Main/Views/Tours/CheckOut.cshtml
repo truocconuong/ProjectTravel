@@ -1,0 +1,137 @@
+﻿
+@model TravelTester.Areas.Admin.Models.Tours
+
+<section class="inner-banner">
+    <div class="zt-container">
+        <div class="box clearfix">
+            <h2>Check Out</h2>
+            <ul class="breadcumb">
+                <li><a href="index.html">Home</a></li>
+                <li><span>Check Out</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="checkout sec-padding">
+    <div class="zt-container">
+        <div class="row">
+            <div class="col-md-8 col-sm-7 col-xs-12">
+
+                @using (Html.BeginForm("AddOrder", "Tours", new { id = @Html.DisplayFor(model => model.Id) }, FormMethod.Post))
+                {
+                    <div class="checkout-content-wrap">
+                        <div class="box box-details">
+                            <div class="box-title">
+                                <h2><span class="sort">1</span> Your Details</h2>
+                            </div>
+                            <div class="box-content">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="control-label">First Name <span class="text-danger">*</span></label>
+                                            <input name="FirstName" class="zt-control" placeholder="John" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Last Name <span class="text-danger">*</span></label>
+                                            <input name="LastName" class="zt-control" placeholder="Clarkson" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Email <span class="text-danger">*</span></label>
+                                            <input name="Email" class="zt-control" placeholder="example@domain.com" required/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box-billing">
+                            <div class="box-title">
+                                <h2><span class="sort">2</span> Billing Information</h2>
+                            </div>
+                            <div class="box-content">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Address <span class="text-danger">*</span></label>
+                                            <input name="Address" class="zt-control" placeholder="Address"required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="control-label">City <span class="text-danger">*</span></label>
+                                            <input name="City" class="zt-control" placeholder="City" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="control-label">State <span class="text-danger">*</span></label>
+                                            <input name="State" class="zt-control" placeholder="State"required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="control-label">Postal Code <span class="text-danger">*</span></label>
+                                            <input name="PostCode" class="zt-control" placeholder="74008"required />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <input id="check" class="" name="checkbox" type="checkbox" value="check">
+                        <label for="check"> I agree tho the <a href="#">Terms</a> and <a href="#">Conditions</a></label>
+                    </div>
+                    <button type="submit" class="btn zt-primary btn-lg btn-book">Book Now</button>
+                }
+
+
+
+
+            </div>
+            <div class="col-md-4 col-sm-5 col-xs-12">
+                <div class="checkout-sidebar-wrap sidebar-box">
+                    <div class="sidebar-header">
+                        <h3 class="title">TOUR INFORMATION</h3>
+                    </div>
+                    <div class="sidebar-content">
+                        <ul>
+                            <li>
+                                <div class="title">
+                                    <span class="fa fa-map-marker"></span> Location
+                                </div>
+                                <div class="details">
+                                    <span class="color-primary"> @Html.DisplayFor(model => model.Place.Localtion)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title">
+                                    <span class="fa fa-calendar"></span> Tour Date
+                                </div>
+                                <div class="details">
+                                    Check in: @Html.DisplayFor(model => model.Time_start) <br />
+                                    Check out:  @Html.DisplayFor(model => model.Time_end)
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title">
+                                    <span class="fa fa-user"></span> Guests
+                                </div>
+                                <div class="details">
+                                    @Html.DisplayFor(model => model.Quantity_people) Adult
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-footer">
+                        Total Price: <span class="blod">$@Html.DisplayFor(model => model.Price)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-checkout"></div>
+    </div>
+</section>

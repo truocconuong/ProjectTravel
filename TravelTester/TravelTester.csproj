@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5AACA605-F4BA-4039-A381-3360236E6618}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TravelTester</RootNamespace>
+    <AssemblyName>TravelTester</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrdersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PlacesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReviewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ToursController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TransportersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Admin\Models\Order.cs" />
+    <Compile Include="Areas\Admin\Models\Place.cs" />
+    <Compile Include="Areas\Admin\Models\Review.cs" />
+    <Compile Include="Areas\Admin\Models\Tours.cs" />
+    <Compile Include="Areas\Admin\Models\Transporter.cs" />
+    <Compile Include="Areas\Admin\Models\User.cs" />
+    <Compile Include="Areas\Main\Controllers\AboutController.cs" />
+    <Compile Include="Areas\Main\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Main\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Main\Controllers\PlacesController.cs" />
+    <Compile Include="Areas\Main\Controllers\ReviewsController.cs" />
+    <Compile Include="Areas\Main\Controllers\ToursController.cs" />
+    <Compile Include="Areas\Main\Controllers\TransportersController.cs" />
+    <Compile Include="Areas\Main\MainAreaRegistration.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002192329341_InitialCreate.cs" />
+    <Compile Include="Migrations\202002192329341_InitialCreate.Designer.cs">
+      <DependentUpon>202002192329341_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002210600411_202002210552114_update_column.cs" />
+    <Compile Include="Migrations\202002210600411_202002210552114_update_column.Designer.cs">
+      <DependentUpon>202002210600411_202002210552114_update_column.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002211804048_add tour.cs" />
+    <Compile Include="Migrations\202002211804048_add tour.Designer.cs">
+      <DependentUpon>202002211804048_add tour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002220733317_add_table_reviews.cs" />
+    <Compile Include="Migrations\202002220733317_add_table_reviews.Designer.cs">
+      <DependentUpon>202002220733317_add_table_reviews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003010053092_create_table_user_order_new.cs" />
+    <Compile Include="Migrations\202003010053092_create_table_user_order_new.Designer.cs">
+      <DependentUpon>202003010053092_create_table_user_order_new.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\TravelTesterContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin-lte\css\AdminLTE.css" />
+    <Content Include="admin-lte\css\AdminLTE.min.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-select2.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-select2.min.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-without-plugins.css" />
+    <Content Include="admin-lte\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="admin-lte\css\skins\skin-black-light.css" />
+    <Content Include="admin-lte\css\skins\skin-black-light.min.css" />
+    <Content Include="admin-lte\css\skins\skin-black.css" />
+    <Content Include="admin-lte\css\skins\skin-black.min.css" />
+    <Content Include="admin-lte\css\skins\skin-blue-light.css" />
+    <Content Include="admin-lte\css\skins\skin-blue-light.min.css" />
+    <Content Include="admin-lte\css\skins\skin-blue.css" />
+    <Content Include="admin-lte\css\skins\skin-blue.min.css" />
+    <Content Include="admin-lte\css\skins\skin-green-light.css" />
+    <Content Include="admin-lte\css\skins\skin-green-light.min.css" />
+    <Content Include="admin-lte\css\skins\skin-green.css" />
+    <Content Include="admin-lte\css\skins\skin-green.min.css" />
+    <Content Include="admin-lte\css\skins\skin-purple-light.css" />
+    <Content Include="admin-lte\css\skins\skin-purple-light.min.css" />
+    <Content Include="admin-lte\css\skins\skin-purple.css" />
+    <Content Include="admin-lte\css\skins\skin-purple.min.css" />
+    <Content Include="admin-lte\css\skins\skin-red-light.css" />
+    <Content Include="admin-lte\css\skins\skin-red-light.min.css" />
+    <Content Include="admin-lte\css\skins\skin-red.css" />
+    <Content Include="admin-lte\css\skins\skin-red.min.css" />
+    <Content Include="admin-lte\css\skins\skin-yellow-light.css" />
+    <Content Include="admin-lte\css\skins\skin-yellow-light.min.css" />
+    <Content Include="admin-lte\css\skins\skin-yellow.css" />
+    <Content Include="admin-lte\css\skins\skin-yellow.min.css" />
+    <Content Include="admin-lte\css\skins\_all-skins.css" />
+    <Content Include="admin-lte\css\skins\_all-skins.min.css" />
+    <Content Include="admin-lte\img\avatar.png" />
+    <Content Include="admin-lte\img\avatar04.png" />
+    <Content Include="admin-lte\img\avatar2.png" />
+    <Content Include="admin-lte\img\avatar3.png" />
+    <Content Include="admin-lte\img\avatar5.png" />
+    <Content Include="admin-lte\img\boxed-bg.jpg" />
+    <Content Include="admin-lte\img\boxed-bg.png" />
+    <Content Include="admin-lte\img\credit\american-express.png" />
+    <Content Include="admin-lte\img\credit\cirrus.png" />
+    <Content Include="admin-lte\img\credit\mastercard.png" />
+    <Content Include="admin-lte\img\credit\mestro.png" />
+    <Content Include="admin-lte\img\credit\paypal.png" />
+    <Content Include="admin-lte\img\credit\paypal2.png" />
+    <Content Include="admin-lte\img\credit\visa.png" />
+    <Content Include="admin-lte\img\default-50x50.gif" />
+    <Content Include="admin-lte\img\icons.png" />
+    <Content Include="admin-lte\img\photo1.png" />
+    <Content Include="admin-lte\img\photo2.png" />
+    <Content Include="admin-lte\img\photo3.jpg" />
+    <Content Include="admin-lte\img\photo4.jpg" />
+    <Content Include="admin-lte\img\user1-128x128.jpg" />
+    <Content Include="admin-lte\img\user2-160x160.jpg" />
+    <Content Include="admin-lte\img\user3-128x128.jpg" />
+    <Content Include="admin-lte\img\user4-128x128.jpg" />
+    <Content Include="admin-lte\img\user5-128x128.jpg" />
+    <Content Include="admin-lte\img\user6-128x128.jpg" />
+    <Content Include="admin-lte\img\user7-128x128.jpg" />
+    <Content Include="admin-lte\img\user8-128x128.jpg" />
+    <Content Include="admin-lte\js\adminlte.js" />
+    <Content Include="admin-lte\js\adminlte.min.js" />
+    <Content Include="admin-lte\js\demo.js" />
+    <Content Include="admin-lte\js\pages\dashboard.js" />
+    <Content Include="admin-lte\js\pages\dashboard2.js" />
+    <Content Include="Areas\Admin\Content\dist\css\adminlte.css" />
+    <Content Include="Areas\Admin\Content\dist\css\adminlte.min.css" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.components.css" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.components.min.css" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.core.css" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.core.min.css" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.extra-components.css" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.extra-components.min.css" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.pages.css" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.pages.min.css" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.plugins.css" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.plugins.min.css" />
+    <Content Include="Areas\Admin\Content\dist\img\AdminLTELogo.png" />
+    <Content Include="Areas\Admin\Content\dist\img\avatar.png" />
+    <Content Include="Areas\Admin\Content\dist\img\avatar04.png" />
+    <Content Include="Areas\Admin\Content\dist\img\avatar2.png" />
+    <Content Include="Areas\Admin\Content\dist\img\avatar3.png" />
+    <Content Include="Areas\Admin\Content\dist\img\avatar5.png" />
+    <Content Include="Areas\Admin\Content\dist\img\boxed-bg.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\boxed-bg.png" />
+    <Content Include="Areas\Admin\Content\dist\img\credit\american-express.png" />
+    <Content Include="Areas\Admin\Content\dist\img\credit\cirrus.png" />
+    <Content Include="Areas\Admin\Content\dist\img\credit\mastercard.png" />
+    <Content Include="Areas\Admin\Content\dist\img\credit\mestro.png" />
+    <Content Include="Areas\Admin\Content\dist\img\credit\paypal.png" />
+    <Content Include="Areas\Admin\Content\dist\img\credit\paypal2.png" />
+    <Content Include="Areas\Admin\Content\dist\img\credit\visa.png" />
+    <Content Include="Areas\Admin\Content\dist\img\default-150x150.png" />
+    <Content Include="Areas\Admin\Content\dist\img\icons.png" />
+    <Content Include="Areas\Admin\Content\dist\img\photo1.png" />
+    <Content Include="Areas\Admin\Content\dist\img\photo2.png" />
+    <Content Include="Areas\Admin\Content\dist\img\photo3.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\photo4.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\prod-1.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\prod-2.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\prod-3.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\prod-4.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\prod-5.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\user1-128x128.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\user2-160x160.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\user3-128x128.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\user4-128x128.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\user5-128x128.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\user6-128x128.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\user7-128x128.jpg" />
+    <Content Include="Areas\Admin\Content\dist\img\user8-128x128.jpg" />
+    <Content Include="Areas\Admin\Content\dist\js\adminlte.js" />
+    <Content Include="Areas\Admin\Content\dist\js\adminlte.min.js" />
+    <Content Include="Areas\Admin\Content\dist\js\demo.js" />
+    <Content Include="Areas\Admin\Content\dist\js\pages\dashboard.js" />
+    <Content Include="Areas\Admin\Content\dist\js\pages\dashboard2.js" />
+    <Content Include="Areas\Admin\Content\dist\js\pages\dashboard3.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\responsive.css" />
+    <Content Include="Content\css\skin\skin-default.css" />
+    <Content Include="Content\css\skin\skin-yellow.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\images\bg-destinations.jpg" />
+    <Content Include="Content\images\bg-famous-locations.jpg" />
+    <Content Include="Content\images\bg-footer.jpg" />
+    <Content Include="Content\images\bg-stuning-beachs.jpg" />
+    <Content Include="Content\images\bg-testimonials.jpg" />
+    <Content Include="Content\images\blog\color-aloft-balloon-festivan.png" />
+    <Content Include="Content\images\blog\cool-place-visit-full-house.png" />
+    <Content Include="Content\images\blog\sweet-ont-the-beach.png" />
+    <Content Include="Content\images\carousel\audiojungle.png" />
+    <Content Include="Content\images\carousel\graphicriver.png" />
+    <Content Include="Content\images\carousel\photodune.png" />
+    <Content Include="Content\images\carousel\themeforest.png" />
+    <Content Include="Content\images\clients\3-1.png" />
+    <Content Include="Content\images\clients\3-2.png" />
+    <Content Include="Content\images\clients\3-3.png" />
+    <Content Include="Content\images\clients\3-4.png" />
+    <Content Include="Content\images\destinations\3-1.jpg" />
+    <Content Include="Content\images\destinations\3-2.jpg" />
+    <Content Include="Content\images\destinations\3-3.jpg" />
+    <Content Include="Content\images\faq.png" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\gallery\1-golden-gate-bridge-at-sunset-1.png" />
+    <Content Include="Content\images\gallery\1-low-angle-view-of-skyscrapers.png" />
+    <Content Include="Content\images\gallery\oia-santorini-greece-sunset-island-sea-tourism-1.png" />
+    <Content Include="Content\images\gallery\santorini-greece.png" />
+    <Content Include="Content\images\gallery\sunset-over-eiffel-tower.png" />
+    <Content Include="Content\images\gallery\weewr.png" />
+    <Content Include="Content\images\gallery\zone-tour-5.png" />
+    <Content Include="Content\images\inner-banner.jpg" />
+    <Content Include="Content\images\instagram\instagram-3-1.jpg" />
+    <Content Include="Content\images\instagram\instagram-3-2.jpg" />
+    <Content Include="Content\images\instagram\instagram-3-3.jpg" />
+    <Content Include="Content\images\instagram\instagram-3-4.jpg" />
+    <Content Include="Content\images\instagram\instagram-3-5.jpg" />
+    <Content Include="Content\images\instagram\instagram-3-6.jpg" />
+    <Content Include="Content\images\instagram\instagram-3-7.jpg" />
+    <Content Include="Content\images\instagram\instagram-3-8.jpg" />
+    <Content Include="Content\images\jbc.png" />
+    <Content Include="Content\images\location-3-1.jpg" />
+    <Content Include="Content\images\location-3-2.jpg" />
+    <Content Include="Content\images\location.jpg" />
+    <Content Include="Content\images\logo-yellow.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\map-2-1.png" />
+    <Content Include="Content\images\map-2-2.png" />
+    <Content Include="Content\images\map-japan.png" />
+    <Content Include="Content\images\map1-1.png" />
+    <Content Include="Content\images\mastercard.png" />
+    <Content Include="Content\images\mt-fuji-sea-of-clouds-sunrise1.png" />
+    <Content Include="Content\images\paypal.png" />
+    <Content Include="Content\images\phone-yellow.png" />
+    <Content Include="Content\images\phone.png" />
+    <Content Include="Content\images\product\product-3-1.jpg" />
+    <Content Include="Content\images\product\product-3-2.jpg" />
+    <Content Include="Content\images\product\product-3-3.jpg" />
+    <Content Include="Content\images\product\product-3-4.jpg" />
+    <Content Include="Content\images\select-arrow.png" />
+    <Content Include="Content\images\shape-yellow.png" />
+    <Content Include="Content\images\shape.png" />
+    <Content Include="Content\images\slider\banner-1.jpg" />
+    <Content Include="Content\images\slider\banner-2.jpg" />
+    <Content Include="Content\images\slider\banner-3-1.jpg" />
+    <Content Include="Content\images\slider\banner-3-2.jpg" />
+    <Content Include="Content\images\slider\banner-5.jpg" />
+    <Content Include="Content\images\slider\banner-6.jpg" />
+    <Content Include="Content\images\slider\control-left.png" />
+    <Content Include="Content\images\slider\control-next.png" />
+    <Content Include="Content\images\slider\control-prev.png" />
+    <Content Include="Content\images\slider\control-right.png" />
+    <Content Include="Content\images\testimonials-3-1.jpg" />
+    <Content Include="Content\images\testimonials-3-2.jpg" />
+    <Content Include="Content\images\thumbnails\1-sunrise-the-sky-reflection.png" />
+    <Content Include="Content\images\thumbnails\5825408292_11759e3304_o.png" />
+    <Content Include="Content\images\thumbnails\6979633505_d042009b47_k.png" />
+    <Content Include="Content\images\thumbnails\8274728646_555f9eab3a_k.png" />
+    <Content Include="Content\images\thumbnails\arno-river-florence-italy-reflection-river.png" />
+    <Content Include="Content\images\thumbnails\autumn-tree-in-field.png" />
+    <Content Include="Content\images\thumbnails\close-up-of-green-leaf-with-text-on-beach-with-young-couple-in-background.png" />
+    <Content Include="Content\images\thumbnails\colorful-houses-with-sunshades.png" />
+    <Content Include="Content\images\thumbnails\dubai.png" />
+    <Content Include="Content\images\thumbnails\india-taj-mahal-agra-architecture-travel.png" />
+    <Content Include="Content\images\thumbnails\machu-pichu.png" />
+    <Content Include="Content\images\thumbnails\mumbai.jpg" />
+    <Content Include="Content\images\thumbnails\newyork.png" />
+    <Content Include="Content\images\thumbnails\night-traffic.png" />
+    <Content Include="Content\images\thumbnails\oia-santorini-greece-sunset-island-sea-tourism-1.png" />
+    <Content Include="Content\images\thumbnails\paris.png" />
+    <Content Include="Content\images\thumbnails\pisa-tower.png" />
+    <Content Include="Content\images\thumbnails\santorini-greece.png" />
+    <Content Include="Content\images\thumbnails\sunset-over-eiffel-tower.png" />
+    <Content Include="Content\images\thumbnails\sydney.jpg" />
+    <Content Include="Content\images\thumbnails\team-member-1.jpg" />
+    <Content Include="Content\images\thumbnails\team-member-2.jpg" />
+    <Content Include="Content\images\thumbnails\team-member-3.jpg" />
+    <Content Include="Content\images\thumbnails\toronto.jpg" />
+    <Content Include="Content\images\thumbnails\tram-city-urban-transport-transportation-travel.png" />
+    <Content Include="Content\images\thumbnails\weewr.png" />
+    <Content Include="Content\images\thumbnails\zone-tour-image-califa.png" />
+    <Content Include="Content\images\tour\1-golden-gate-bridge-at-sunset-1.jpg" />
+    <Content Include="Content\images\tour\1dPsxhw.jpg" />
+    <Content Include="Content\images\tour\building-ocean-buildings.jpg" />
+    <Content Include="Content\images\tour\india-taj-mahal-agra-architecture-travel.jpg" />
+    <Content Include="Content\images\tour\mosque-abu-dhabi-travel-white-architecture-orient.jpg" />
+    <Content Include="Content\images\tour\night-traffic.jpg" />
+    <Content Include="Content\images\tour\pisa-tower.jpg" />
+    <Content Include="Content\images\tour\the-palm-atlantis-dubai-hotel-mall-travel-resort.jpg" />
+    <Content Include="Content\images\tour\tram-city-urban-transport-transportation-travel.jpg" />
+    <Content Include="Content\images\video-3-1.jpg" />
+    <Content Include="Content\images\video-3.jpg" />
+    <Content Include="Content\images\video-play-2.png" />
+    <Content Include="Content\images\video-play.png" />
+    <Content Include="Content\images\videos-1.jpg" />
+    <Content Include="Content\images\visa.png" />
+    <Content Include="Content\images\zone-tour-image-2.png" />
+    <Content Include="Content\include\sendmail.php.html" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\plugins\animate.min.css" />
+    <Content Include="Content\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\plugins\bx-slider\images\bx_loader.gif" />
+    <Content Include="Content\plugins\bx-slider\images\controls.png" />
+    <Content Include="Content\plugins\bx-slider\jquery.bxslider.css" />
+    <Content Include="Content\plugins\bx-slider\jquery.bxslider.min.js" />
+    <Content Include="Content\plugins\datetimepicker\jquery.datetimepicker.full.min.js" />
+    <Content Include="Content\plugins\datetimepicker\jquery.datetimepicker.min.css" />
+    <Content Include="Content\plugins\flaticon\flaticon.css" />
+    <Content Include="Content\plugins\flaticon\Flaticon.svg" />
+    <Content Include="Content\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\plugins\font-awesome\fonts\fontawesome-webfont-v=4.5.0.svg" />
+    <Content Include="Content\plugins\gmap3.min.js" />
+    <Content Include="Content\plugins\jquery-ui-1.12.1\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\plugins\jquery-ui-1.12.1\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\plugins\jquery-ui-1.12.1\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\plugins\jquery-ui-1.12.1\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\plugins\jquery-ui-1.12.1\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\plugins\jquery-ui-1.12.1\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\plugins\jquery-ui-1.12.1\jquery-ui.css" />
+    <Content Include="Content\plugins\jquery-ui-1.12.1\jquery-ui.js" />
+    <Content Include="Content\plugins\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="Content\plugins\jquery.sticky-kit.min.js" />
+    <Content Include="Content\plugins\jquery\jquery-1.12.4.min.js" />
+    <Content Include="Content\plugins\lightGallery\dist\css\lightgallery.min.css" />
+    <Content Include="Content\plugins\lightGallery\dist\fonts\lg-n1z373.svg" />
+    <Content Include="Content\plugins\lightGallery\dist\img\loading.gif" />
+    <Content Include="Content\plugins\lightGallery\dist\img\video-play.png" />
+    <Content Include="Content\plugins\lightGallery\dist\img\vimeo-play.png" />
+    <Content Include="Content\plugins\lightGallery\dist\img\youtube-play.png" />
+    <Content Include="Content\plugins\lightGallery\dist\js\jquery.mousewheel.min.js" />
+    <Content Include="Content\plugins\lightGallery\dist\js\lightgallery-all.min.js" />
+    <Content Include="Content\plugins\masonry.pkgd.min.js" />
+    <Content Include="Content\plugins\owl.carousel-2\assets\owl.carousel.css" />
+    <Content Include="Content\plugins\owl.carousel-2\assets\owl.theme.default.min.css" />
+    <Content Include="Content\plugins\owl.carousel-2\assets\owl.video.play.png.html" />
+    <Content Include="Content\plugins\owl.carousel-2\owl.carousel.min.js" />
+    <Content Include="Content\plugins\revolution\assets\coloredbg.png" />
+    <Content Include="Content\plugins\revolution\assets\gridtile.png" />
+    <Content Include="Content\plugins\revolution\assets\gridtile_3x3.png" />
+    <Content Include="Content\plugins\revolution\assets\gridtile_3x3_white.png" />
+    <Content Include="Content\plugins\revolution\assets\gridtile_white.png" />
+    <Content Include="Content\plugins\revolution\assets\loader.gif" />
+    <Content Include="Content\plugins\revolution\assets\timer.png.html" />
+    <Content Include="Content\plugins\revolution\css\closedhand.cur" />
+    <Content Include="Content\plugins\revolution\css\layers.css" />
+    <Content Include="Content\plugins\revolution\css\navigation.css" />
+    <Content Include="Content\plugins\revolution\css\openhand.cur" />
+    <Content Include="Content\plugins\revolution\css\settings.css" />
+    <Content Include="Content\plugins\revolution\fonts\revicons\revicons-5510888.svg" />
+    <Content Include="Content\plugins\revolution\js\extensions\revolution.extension.actions.min.js" />
+    <Content Include="Content\plugins\revolution\js\extensions\revolution.extension.carousel.min.js" />
+    <Content Include="Content\plugins\revolution\js\extensions\revolution.extension.kenburn.min.js" />
+    <Content Include="Content\plugins\revolution\js\extensions\revolution.extension.layeranimation.min.js" />
+    <Content Include="Content\plugins\revolution\js\extensions\revolution.extension.migration.min.js" />
+    <Content Include="Content\plugins\revolution\js\extensions\revolution.extension.navigation.min.js" />
+    <Content Include="Content\plugins\revolution\js\extensions\revolution.extension.parallax.min.js" />
+    <Content Include="Content\plugins\revolution\js\extensions\revolution.extension.slideanims.min.js" />
+    <Content Include="Content\plugins\revolution\js\extensions\revolution.extension.video.min.js" />
+    <Content Include="Content\plugins\revolution\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Content\plugins\revolution\js\jquery.themepunch.tools.min.js" />
+    <Content Include="Content\tether\tether-theme-arrows-dark.css" />
+    <Content Include="Content\tether\tether-theme-arrows-dark.min.css" />
+    <Content Include="Content\tether\tether-theme-arrows.css" />
+    <Content Include="Content\tether\tether-theme-arrows.min.css" />
+    <Content Include="Content\tether\tether-theme-basic.css" />
+    <Content Include="Content\tether\tether-theme-basic.min.css" />
+    <Content Include="Content\tether\tether.css" />
+    <Content Include="Content\tether\tether.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Main\Views\web.config" />
+    <Content Include="Areas\Main\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Main\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Main\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Places\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Places\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Places\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Places\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Places\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Transporters\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Transporters\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Transporters\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Transporters\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Transporters\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Tours\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Tours\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Tours\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Tours\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Tours\Index.cshtml" />
+    <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular-.eot" />
+    <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\plugins\flaticon\Flaticon-.eot" />
+    <Content Include="Content\plugins\flaticon\Flaticon.eot" />
+    <Content Include="Content\plugins\flaticon\Flaticon.ttf" />
+    <Content Include="Content\plugins\flaticon\Flaticon.woff" />
+    <Content Include="Content\plugins\font-awesome\fonts\fontawesome-webfont-.eot" />
+    <Content Include="Content\plugins\font-awesome\fonts\fontawesome-webfont-v=4.5.0.eot" />
+    <Content Include="Content\plugins\font-awesome\fonts\fontawesome-webfont-v=4.5.0.ttf" />
+    <Content Include="Content\plugins\font-awesome\fonts\fontawesome-webfont-v=4.5.0.woff" />
+    <Content Include="Content\plugins\font-awesome\fonts\fontawesome-webfont-v=4.5.0.woff2" />
+    <Content Include="Content\plugins\lightGallery\dist\fonts\lg-.eot" />
+    <Content Include="Content\plugins\lightGallery\dist\fonts\lg-n1z373.eot" />
+    <Content Include="Content\plugins\lightGallery\dist\fonts\lg-n1z373.ttf" />
+    <Content Include="Content\plugins\lightGallery\dist\fonts\lg-n1z373.woff" />
+    <Content Include="Content\plugins\revolution\fonts\revicons\revicons-5510888.eot" />
+    <Content Include="Content\plugins\revolution\fonts\revicons\revicons-5510888.ttf" />
+    <Content Include="Content\plugins\revolution\fonts\revicons\revicons-5510888.woff" />
+    <Content Include="Areas\Main\Views\Tours\Create.cshtml" />
+    <Content Include="Areas\Main\Views\Tours\Delete.cshtml" />
+    <Content Include="Areas\Main\Views\Tours\Details.cshtml" />
+    <Content Include="Areas\Main\Views\Tours\Edit.cshtml" />
+    <Content Include="Areas\Main\Views\Tours\Index.cshtml" />
+    <Content Include="Areas\Main\Views\Places\Create.cshtml" />
+    <Content Include="Areas\Main\Views\Places\Delete.cshtml" />
+    <Content Include="Areas\Main\Views\Places\Details.cshtml" />
+    <Content Include="Areas\Main\Views\Places\Edit.cshtml" />
+    <Content Include="Areas\Main\Views\Places\Index.cshtml" />
+    <Content Include="Areas\Main\Views\Transporters\Create.cshtml" />
+    <Content Include="Areas\Main\Views\Transporters\Delete.cshtml" />
+    <Content Include="Areas\Main\Views\Transporters\Details.cshtml" />
+    <Content Include="Areas\Main\Views\Transporters\Edit.cshtml" />
+    <Content Include="Areas\Main\Views\Transporters\Index.cshtml" />
+    <Content Include="Areas\Main\Views\Places\getOtherTours.cshtml" />
+    <Content Include="Areas\Main\Views\Reviews\Create.cshtml" />
+    <Content Include="Areas\Main\Views\Reviews\Delete.cshtml" />
+    <Content Include="Areas\Main\Views\Reviews\Details.cshtml" />
+    <Content Include="Areas\Main\Views\Reviews\Edit.cshtml" />
+    <Content Include="Areas\Main\Views\Reviews\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Reviews\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Reviews\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Reviews\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Reviews\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Reviews\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Tours\AddReviewTour.cshtml" />
+    <Content Include="Areas\Main\Views\Tours\AddReviewTour.cshtml" />
+    <Content Include="Areas\Main\Views\About\index.cshtml" />
+    <Content Include="Areas\Main\Views\Tours\CheckOut.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Index.cshtml" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="admin-lte\css\adminlte.min.css.map" />
+    <Content Include="admin-lte\css\adminlte.css.map" />
+    <Content Include="Areas\Admin\Content\dist\css\adminlte.css.map" />
+    <Content Include="Areas\Admin\Content\dist\css\adminlte.min.css.map" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.components.css.map" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.components.min.css.map" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.core.css.map" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.core.min.css.map" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.extra-components.css.map" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.extra-components.min.css.map" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.pages.css.map" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.pages.min.css.map" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.plugins.css.map" />
+    <Content Include="Areas\Admin\Content\dist\css\alt\adminlte.plugins.min.css.map" />
+    <Content Include="Areas\Admin\Content\dist\js\adminlte.js.map" />
+    <Content Include="Areas\Admin\Content\dist\js\adminlte.min.js.map" />
+    <Content Include="Areas\Admin\Views\Home\Details.cshtml" />
+    <Content Include="Areas\Main\Views\Home\Places.cshtml" />
+    <Content Include="Areas\Main\Views\Tours\Thankyou.cshtml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\tether.js" />
+    <Content Include="Scripts\tether.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Main\Models\" />
+    <Folder Include="Areas\Main\Views\Default\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002192329341_InitialCreate.resx">
+      <DependentUpon>202002192329341_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002210600411_202002210552114_update_column.resx">
+      <DependentUpon>202002210600411_202002210552114_update_column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002211804048_add tour.resx">
+      <DependentUpon>202002211804048_add tour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002220733317_add_table_reviews.resx">
+      <DependentUpon>202002220733317_add_table_reviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003010053092_create_table_user_order_new.resx">
+      <DependentUpon>202003010053092_create_table_user_order_new.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50329</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50329/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

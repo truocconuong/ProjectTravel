@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TravelTester.Areas.Admin.Models.Transporter>
+
+<section class="inner-banner">
+    <div class="zt-container">
+        <div class="box clearfix">
+            <h2>Transporter</h2>
+            <ul class="breadcumb">
+                <li><span>Transporter</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="popular-services sec-padding home-two">
+    <div class="zt-container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="tour-list-box text-center zt-overlay zt-overlay-hover">
+                        <div class="img-box position-relative">
+                            <div class="zt-overlay-panel zt-overlay-background zt-overlay-slide-top zt-flex zt-flex-center zt-flex-middle text-center">
+                                <a href="@Url.Action("Details", "Tours", new { id=item.Id })" class="btn zt-default btn-lg">Detail</a>
+                            </div>
+                            <img src="@Html.DisplayFor(modelItem => item.Image)" alt="" />
+                        </div>
+                        <div class="box-content">
+                            <h3>  @Html.DisplayFor(modelItem => item.Title)</h3>
+                            <div class="driver"></div>
+                            <span class="duration">The Tesla Model 3 is an electric four-door sedan developed by Tesla</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="pagination-wrap">
+            <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li class="active"><span class="">3</span></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+        </div>
+    </div>
+</section>

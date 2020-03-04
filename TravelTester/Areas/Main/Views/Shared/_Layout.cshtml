@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Zone - Tours and Travel HTML Template</title>
+    <!-- viewport meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+    <link rel="stylesheet" href="~/Content/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- fontawesome css -->
+    <link rel="stylesheet" href="~/Content/plugins/font-awesome/css/font-awesome.min.css">
+    <!-- flaticon css -->
+    <link rel="stylesheet" href="~/Content/plugins/flaticon/flaticon.css">
+    <!-- revolution slider css -->
+    <link rel="stylesheet" href="~/Content/plugins/revolution/css/settings.css">
+    <link rel="stylesheet" href="~/Content/plugins/revolution/css/layers.css">
+    <link rel="stylesheet" href="~/Content/plugins/revolution/css/navigation.css">
+    <!-- jQuery ui css -->
+    <link href="~/Content/plugins/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+    <!-- owl carousel css -->
+    <link rel="stylesheet" href="~/Content/plugins/owl.carousel-2/assets/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/plugins/owl.carousel-2/assets/owl.theme.default.min.css">
+    <!-- gallery -->
+    <link rel="stylesheet" href="~/Content/plugins/lightGallery/dist/css/lightgallery.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="~/Content/plugins/animate.min.css">
+    <!-- bxslider -->
+    <link rel="stylesheet" href="~/Content/plugins/bx-slider/jquery.bxslider.css">
+    <!-- datetimepicker css -->
+    <link rel="stylesheet" href="~/Content/plugins/datetimepicker/jquery.datetimepicker.min.css">
+    <!-- master stylesheet -->
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <!-- responsive stylesheet -->
+    <link rel="stylesheet" href="~/Content/css/responsive.css">
+    <!-- skin stylesheet -->
+    <link rel="stylesheet" href="~/Content/css/skin/skin-default.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" />
+</head>
+<body>
+    <header id="header" class="stricky home">
+        <div class="zt-container clearfix">
+            <div class="logo pull-left">
+                <a href="@Url.Action("Index","Home", new { Area = "Main" })">
+                    <img src="~/Content/images/logo.png" alt="">
+                </a>
+            </div>
+            <nav class="nav-holder pull-right">
+                <div class="nav-footer">
+                    <ul class="nav">
+                        <li class="has-submenu active">
+                            <a href="@Url.Action("Index","Home", new { Area = "Main" })">Home </a>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="@Url.Action("Index", "Tours", new { Area = "Main" })">Tours</a>
+                        </li>
+                        <li><a href="@Url.Action("Index", "Places" , new { Area = "Main" })">Places</a></li>
+                        <li><a href="@Url.Action("Index", "About", new { Area = "Main" })">About</a></li>
+                    </ul>
+                </div>
+                <div class="nav-header">
+                    <ul>
+                        <li>
+                            <a href="#"><span class="icon icon-phone"></span></a>
+                            <ul class="submenu phone-box">
+                                <li>
+                                    <div class="text-phone-number">
+                                        <div class="phone-number"><a href="tel:0123456789">012.345.6789</a></div>
+                                        <div class="time-wrap">
+                                            <span class="now-is">Now is:</span>
+                                            <span class="time-open">OPEN</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><button class="hidden-lg hidden-md menu-expander"><i class="fa fa-bars"></i></button></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <div class="container fix-css" style="width:auto;padding-left:0;padding-right:0">
+        @RenderBody()
+    </div>
+
+    <footer id="footer" class="sec-padding">
+        <div class="zt-container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="footer-widget notitle about-widget">
+                        <div class="title">
+                            <h3>ABOUT US</h3>
+                        </div>
+                        <img class="logo-footer" src="images/logo.png" alt="" />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In scelerisque bibendum efficitur. Etiam mattis, tortor non tincidunt euismod. Cras et maximus magna. Etiam mattis, tortor non tincidunt euismod. </p>
+                        <ul class="social-footer">
+                            <li><a href="#" target="_blank"><span class="fa fa-facebook"></span></a></li>
+                            <li><a href="#" target="_blank"><span class="fa fa-twitter"></span></a></li>
+                            <li><a href="#" target="_blank"><span class="fa fa-instagram"></span></a></li>
+                            <li><a href="#" target="_blank"><span class="fa fa-vimeo"></span></a></li>
+                            <li><a href="#" target="_blank"><span class="fa fa-google-plus"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6 col-xs-12">
+                    <div class="footer-widget post-link-widget">
+                        <div class="title">
+                            <h3>LINKS</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#">Top Tour</a></li>
+                            <li><a href="#">New Travel</a></li>
+                            <li><a href="#">How - To</a></li>
+                            <li><a href="#">Tips and Tricks</a></li>
+                            <li><a href="#">Best Tour</a></li>
+                            <li><a href="#">Top Travel</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6 col-xs-12">
+                    <div class="footer-widget post-link-widget">
+                        <div class="title">
+                            <h3>USEFUL LINKS</h3>
+                        </div>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">New Latest</a></li>
+                            <li><a href="#">Gallery</a></li>
+                            <li><a href="#">Destinations</a></li>
+                            <li><a href="#">Company</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="footer-widget gallery-widget">
+                        <div class="title">
+                            <h3>GALLERY</h3>
+                        </div>
+                        <ul id="gallerywidget" class="list-unstyled">
+                            <li data-src="images/tour/3.jpg">
+                                <a href="#">
+                                    <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                            <span class="fa fa-plus"></span>
+                                        </div>
+                                        <img src="images/thumbnails/oia-santorini-greece-sunset-island-sea-tourism-1.png" alt="" />
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-src="images/tour/2.jpg">
+                                <a href="#">
+                                    <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                            <span class="fa fa-plus"></span>
+                                        </div>
+                                        <img src="images/thumbnails/colorful-houses-with-sunshades.png" alt="" />
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-src="images/tour/1.jpg">
+                                <a href="#">
+                                    <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                            <span class="fa fa-plus"></span>
+                                        </div>
+                                        <img src="images/thumbnails/india-taj-mahal-agra-architecture-travel.png" alt="" />
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-src="images/tour/4.jpg">
+                                <a href="#">
+                                    <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                            <span class="fa fa-plus"></span>
+                                        </div>
+                                        <img src="images/thumbnails/santorini-greece.png" alt="" />
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-src="images/tour/5.jpg">
+                                <a href="#">
+                                    <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                            <span class="fa fa-plus"></span>
+                                        </div>
+                                        <img src="images/thumbnails/pisa-tower.png" alt="" />
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-src="images/tour/building-ocean-buildings.jpg">
+                                <a href="#">
+                                    <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                            <span class="fa fa-plus"></span>
+                                        </div>
+                                        <img src="images/thumbnails/toronto.jpg" alt="" />
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-src="images/tour/tram-city-urban-transport-transportation-travel.jpg">
+                                <a href="#">
+                                    <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                            <span class="fa fa-plus"></span>
+                                        </div>
+                                        <img src="images/thumbnails/tram-city-urban-transport-transportation-travel.png" alt="" />
+                                    </div>
+                                </a>
+                            </li>
+                            <li data-src="images/tour/6.jpg">
+                                <a href="#">
+                                    <div class="gallery-wrap zt-overlay zt-overlay-hover">
+                                        <div class="zt-overlay-panel zt-overlay-background zt-overlay-background-primary zt-flex zt-flex-center zt-flex-middle">
+                                            <span class="fa fa-plus"></span>
+                                        </div>
+                                        <img src="images/thumbnails/arno-river-florence-italy-reflection-river.png" alt="" />
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom text-white">
+        <div class="zt-container">
+            <div class="row">
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <div class="left-text">
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12 col-xs-12">
+                    <div class="right-text pull-right">
+                        <ul class="menu-footer ">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Destinations</a>
+                            </li>
+                            <li>
+                                <a href="#">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="~/Content/plugins/jquery/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="~/Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- jQuery ui js -->
+    <script src="~/Content/plugins/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <!-- owl carousel js -->
+    <script src="~/Content/plugins/owl.carousel-2/owl.carousel.min.js"></script>
+    <!-- gallery js -->
+    <script src="~/Content/plugins/lightGallery/dist/js/lightgallery-all.min.js"></script>
+    <script src="~/Content/plugins/lightGallery/dist/js/jquery.mousewheel.min.js"></script>
+    <!-- jQuery validation -->
+    <script src="~/Content/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+    <!-- bxslider js -->
+    <script src="~/Content/plugins/bx-slider/jquery.bxslider.min.js"></script>
+    <!-- datetimepicker js -->
+    <script src="~/Content/plugins/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+    <!-- revolution slider js -->
+    <script src="~/Content/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/Content/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/Content/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="~/~/Content//plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="~/Content/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="~/Content/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="~/Content/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="~/Content/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="~/Content/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="~/Content/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="~/Content/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+
+    <!-- theme custom js  -->
+    <script src="~/Content/js/main.js"></script>
+</body>
+</html>

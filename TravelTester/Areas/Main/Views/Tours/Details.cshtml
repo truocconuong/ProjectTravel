@@ -1,0 +1,115 @@
+﻿@model TravelTester.Areas.Admin.Models.Tours
+
+@{
+    ViewBag.Title = "Details";
+}
+<section class="inner-banner">
+    <div class="zt-container">
+        <div class="box clearfix">
+            <h2>TOUR DETAIL</h2>
+            <ul class="breadcumb">
+                <li><span>Tour Detail</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="destinations sec-padding">
+    <div class="zt-container">
+        <div class="row">
+            <div class="col-md-8 col-sm-7 col-xs-12">
+                <div class="blog-wrap">
+                    <h1> @Html.DisplayFor(model => model.Titile)</h1>
+                    <div class="blog-thumbnail">
+                        <img src=" @Html.DisplayFor(model => model.Images)" alt="" />
+                    </div>
+                    <div class="blog-content">
+
+                        <div class="content">
+                            <p> @Html.DisplayFor(model => model.Content)</p>
+                            <blockquote>
+                                The experience that you will experience when traveling :
+                                <ul>
+                                    <li>
+                                        Relax and relax at the hotel :  @Html.DisplayFor(model => model.Place.Title)
+                                    </li>
+                                    <li>
+                                        Address :  @Html.DisplayFor(model => model.Place.Localtion)
+                                    </li>
+                                    <li><img src="@Html.DisplayFor(model => model.Place.Images)" alt="Alternate Text" /></li>
+                                    <a href="@Url.Action("Details", "Places", new { id=Model.Place.Id })" class="latest-read-more">Read more <span class="color-primary fa fa-angle-double-right"></span></a>
+                                </ul>
+                            </blockquote>
+                        </div>
+
+                    </div>
+                    @Html.Action("AddReviewTour", "Tours", new { area = "Main" });
+
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-4 col-sm-5 col-xs-12">
+                <div class="destination-sidebar-wrap sidebar-box">
+                    <div class="sidebar-header">
+                        <h3 class="title">TOUR INFORMATION</h3>
+                    </div>
+                    <div class="sidebar-book sidebar-content">
+                        <form class="form filter-box">
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <input type="text" class="zt-control datetimepicker" disabled placeholder="@Html.DisplayFor(model => model.Time_start)">
+                                    <div class="input-addon"><span class="fa fa-calendar"></span></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <input type="text" class="zt-control datetimepicker" disabled placeholder="@Html.DisplayFor(model => model.Time_end)">
+                                    <div class="input-addon"><span class="fa fa-calendar"></span></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <input type="number" class="zt-control" disabled placeholder="@Html.DisplayFor(model => model.Quantity_people) Adults" min="1" max="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="sidebar-order sidebar-content">
+                        <div class="price">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                    <div class="box-price">
+                                        Total Price
+                                        <span class="number">$199</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a style="margin-left: 56px;margin-top: 20px" href=@Url.Action("CheckOut", "Tours", new { id=Model.Id })><button type="submit" class="btn zt-primary btn-lg">Checkout</button></a>
+                    </div>
+                </div>
+                <div class="destination-rivew-wrap">
+                    <h3 class="title">REVIEWS</h3>
+                    <ul class="destination-rivew-slider owl-carousel">
+                        @foreach (var item in Model.Reviews)
+                        {
+                            <li>
+                                <p>@Html.DisplayFor(model => item.Content)</p>
+                                <img src="~/Content/images/thumbnails/team-member-1.jpg" class="" alt="" />
+                                <span class="color-primary">-@Html.DisplayFor(model => item.Name)</span>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+

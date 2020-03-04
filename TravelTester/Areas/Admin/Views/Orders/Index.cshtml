@@ -1,0 +1,34 @@
+﻿@model IEnumerable<TravelTester.Areas.Admin.Models.Order>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Email</th>
+            <th scope="col">Tours</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row"> @Html.DisplayFor(modelItem => item.Id)</th>
+                <td>  @Html.DisplayFor(modelItem => item.User.Email)</td>
+                <td>  @Html.DisplayFor(modelItem => item.Tours.Titile)</td>
+                <td>  @Html.DisplayFor(modelItem => item.Status)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

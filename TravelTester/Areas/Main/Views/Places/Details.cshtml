@@ -1,0 +1,25 @@
+﻿@model TravelTester.Areas.Admin.Models.Place
+<section class="inner-banner">
+    <div class="zt-container">
+        <div class="box clearfix">
+            <h2>Hotel</h2>
+            <ul class="breadcumb">
+                <li><a href="index.html">Home</a></li>
+                <li><span>Hotel</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="about-info sec-padding">
+    <div class="zt-container-min">
+        <div class="sec-title text-center">
+            <h2>  @Html.DisplayFor(model => model.Title)</h2>
+            <span class="tagline">Address :  @Html.DisplayFor(model => model.Localtion)</span>
+            <img src="@Html.DisplayFor(model => model.Images)" alt="Alternate Text" />
+        </div>
+        <div class="about-info-content">
+            <p>  @Html.DisplayFor(model => model.Content)</p>
+        </div>
+    </div>
+</section>
+@Html.Action("GetOtherTours", "Places", new { area = "Main"});

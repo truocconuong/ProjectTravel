@@ -1,0 +1,92 @@
+﻿@model PagedList.IPagedList<TravelTester.Areas.Admin.Models.Tours>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="inner-banner">
+    <div class="zt-container">
+        <div class="box clearfix">
+            <h2>Tour</h2>
+            <ul class="breadcumb">
+                <li><span>Tour</span></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="popular-services sec-padding home-two">
+    <div class="zt-container">
+        <div class="row">
+
+            @using (Html.BeginForm())
+            {
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.TextBox("SearchString", null, new { @class = "zt-control", placeholder = "Search tour" })
+                        <div class="input-icon">
+                            <div class="input-addon"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        @Html.TextBox("Adults", null, new { @class = "zt-control", placeholder = "Adults"})
+                        <div class="input-icon">
+                            <div class="input-addon"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        @Html.TextBox("Checkin", null, new { @class = "zt-control", placeholder = "Checkin", type = "date" })
+                        <div class="input-icon">
+                            <div class="input-addon"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        @Html.TextBox("Checkout", null, new { @class = "zt-control", placeholder = "Checkout", type = "date" })
+                        <div class="input-icon">
+                            <div class="input-addon"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                    <div class="zt-flex zt-flex-center">
+                        <button type="submit" class="btn zt-primary btn-lg btn-full">Search</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="zt-container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-6">
+                    <div class="tour-list-box text-center zt-overlay zt-overlay-hover">
+                        <div class="img-box position-relative">
+                            <div class="zt-overlay-panel zt-overlay-background zt-overlay-slide-top zt-flex zt-flex-center zt-flex-middle text-center">
+                                <a href="@Url.Action("Details", "Tours", new { id=item.Id })" class="btn zt-default btn-lg">Detail</a>
+                            </div>
+                            <img src=" @Html.DisplayFor(modelItem => item.Images)" alt="" />
+                        </div>
+                        <div class="box-content">
+                            <h3>  @Html.DisplayFor(modelItem => item.Titile)</h3>
+                            <div class="driver"></div>
+                            <span class="duration">Hotel: @Html.DisplayFor(modelItem => item.Place.Title) <br /> Transporter : @Html.DisplayFor(modelItem => item.Transporter.Title) </span>
+                            <div class="driver"></div>
+                            <span class="duration">Time start: @Html.DisplayFor(modelItem => item.Time_start) <br /> Time end : @Html.DisplayFor(modelItem => item.Time_end) </span>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="pagination-wrap">
+            @Html.PagedListPager(Model, page => Url.Action("Index",
+                new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+        </div>
+    </div>
+</section>

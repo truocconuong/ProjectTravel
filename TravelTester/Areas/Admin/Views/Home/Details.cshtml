@@ -1,0 +1,30 @@
+﻿@model TravelTester.Areas.Admin.Models.User
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Email</th>
+            <th scope="col">Tours</th>
+            <th scope="col">Price</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Orders)
+        {
+            <tr>
+                <th scope="row"> @Html.DisplayFor(modelItem => item.Id)</th>
+                <th scope="row"> @Html.DisplayFor(modelItem => item.User.Email)</th>
+                <td>  @Html.DisplayFor(modelItem => item.Tours.Titile)</td>
+                <td>  $@Html.DisplayFor(modelItem => item.Tours.Price)</td>
+                <td>  @Html.DisplayFor(modelItem => item.Status)</td>
+                <td>
+                    @Html.ActionLink("Details", "Details","Orders", new { id = item.Id },null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
